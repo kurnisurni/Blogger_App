@@ -1,11 +1,11 @@
 package com.example.demo.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.Instant;
 
 @Entity
+@Table(name = "articles")
+
 public class Article {
     @Id   // Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)      // Auto increment
@@ -15,6 +15,13 @@ public class Article {
     private Long published;
 
     public Article() {
+    }
+
+    public Article(int id, String title, String content, Long published) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.published = Instant.now().getEpochSecond();
     }
 
     public int getId() {
