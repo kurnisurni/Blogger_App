@@ -37,6 +37,13 @@ public class ArticleController {
         return articleService.createNewArticle(article);
     }
 
+    /*
+    //Get specific article by title -10 mar javaspring med sql code along 1
+    @GetMapping("/rest/articles/title/{title}")
+    public List<Article> getArticlesByTitle(@PathVariable String title) {
+        return articleService.findByTitle(title);
+    } */
+
 
 
 }
