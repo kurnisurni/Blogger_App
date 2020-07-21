@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@Controller
-@CrossOrigin
+//@Controller
+//@CrossOrigin
 
-@RequestMapping("/rest")
+//@RequestMapping("/rest")
 public class ArticleController {
 
     @Autowired
@@ -37,11 +37,7 @@ public class ArticleController {
         return articleService.createNewArticle(article);
     }
 
-    // Update an article
-    @PatchMapping("/rest/articles/{id}")
-    public Article updateArticle(@RequestBody Article article) {
-        return articleService.
-    }
+
 
 }
 

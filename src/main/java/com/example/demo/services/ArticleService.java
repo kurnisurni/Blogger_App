@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ArticleService {
 
     @Autowired
-    ArticleRepo articleRepo;
+    private ArticleRepo articleRepo;
 
     public List<Article> findAllArticles() {
         return (List<Article>) articleRepo.findAll();
@@ -26,5 +26,4 @@ public class ArticleService {
         return articleRepo.save(newArticle);
     }
 
-    public Article
 }
