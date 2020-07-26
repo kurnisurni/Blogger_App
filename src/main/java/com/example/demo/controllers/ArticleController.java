@@ -10,14 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@Controller
-//@CrossOrigin
-
-//@RequestMapping("/rest")
 public class ArticleController {
 
     @Autowired
-    ArticleService articleService;
+    private ArticleService articleService;
 
     // Get all articles
     @GetMapping("/rest/articles")
@@ -37,12 +33,11 @@ public class ArticleController {
         return articleService.createNewArticle(article);
     }
 
-    /*
-    //Get specific article by title -10 mar javaspring med sql code along 1
-    @GetMapping("/rest/articles/title/{title}")
-    public List<Article> getArticlesByTitle(@PathVariable String title) {
-        return articleService.findByTitle(title);
-    } */
+    //Delete an article
+    @DeleteMapping("/rest/articles/{id}")
+    public void deleteArticle(@PathVariable int id) {
+        articleService.deleteArticle(id);
+    }
 
 
 

@@ -8,6 +8,8 @@ export default {
         articles = await articles.json()
   
         console.log(articles)
+
+        this.$store.commit('setArticles', articles)
       }
     }
 }

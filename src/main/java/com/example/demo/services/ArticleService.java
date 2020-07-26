@@ -26,4 +26,8 @@ public class ArticleService {
         return articleRepo.save(newArticle);
     }
 
+    public void deleteArticle(int id) {
+        articleRepo.deleteById(id);
+    }
+
 }
