@@ -8,7 +8,7 @@ export default {
             title: {{ article.title }} <br>
             content: {{ article.content }} <br>
             published: {{ article.published }}
-            <button v-if="removing === article.id" @click="deleteArticle(article.id)">🗑️</button>
+            <span v-if="removing === article.id" @click="deleteArticle(article.id)">🗑️</span>
         </li>
     </ul>
     `,
