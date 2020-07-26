@@ -14,8 +14,8 @@ export const store = new Vuex.Store({
         state.articles.push(article)
     },
     removeArticle(state, article) {
-        let index = state.articles.findIndex(a => a.id == article.id);
-        state.articles.splice(index, 1);
+        let indexOfArticle = state.articles.indexOf(article);
+        state.articles.splice(indexOfArticle, 1);
         }
   }
 })

@@ -1,23 +1,23 @@
 export default {
     template: `
-    <section>
-        <div v-for="article of articles"
-            :key="article.id"
-            class="card">
-            <div>
-            <h3>title: {{ article.title }} </h3> <br>
-            <p>id: {{ article.id }} </p> <br>
-            <p>content: {{ article.content }} </p> <br>
-            <p>published: {{ article.published }} </p>
-            </div>
+     <ul>
+        <li v-for="article of articles"
+                :key="article.id"
+                class="card">
+                <h3> {{ article.title }} </h3>
+                id: {{ article.id }} <br>
+                content: {{ article.content }} <br>
+                published: {{ article.published }} <br>
             <p @click="deleteArticle(article)">🗑️</p>
-        </div>
-    </section>
+        </li>
+    </ul>
 
     `,
     data(){
         return {
-        removing: '',
+        articleTitle: '',
+        articleContent: '',
+        articlePublished: '',
         }
     },
     computed: {
@@ -27,13 +27,15 @@ export default {
     },
     methods: {
         async deleteArticle(article) {
-            let result = await fetch('/rest/articles/{id}', {
+            let result = await fetch('/rest/articles/' + this.id, {
                 method: 'DELETE',
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(article)
             })
             result = await result.json()
 
             this.$store.commit('removeArticle', article)
+
         }
     }
 }
