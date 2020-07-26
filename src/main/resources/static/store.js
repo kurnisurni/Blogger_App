@@ -12,8 +12,9 @@ export const store = new Vuex.Store({
     },
     appendArticle(state, article) {
         state.articles.push(article)
-    }
-
-  },
-  //actions: {}
+    },
+    removeArticle(state, index) {
+        state.articles.splice(index, 1)
+        }
+  }
 })

@@ -1,11 +1,12 @@
+import navbar from './components/navbar.js'
+
 export default {
+    components: {
+        navbar
+    },
     template: `
       <div id="app">
-        <nav>
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-        </nav>
-  
+        <navbar />
         <main>
           <router-view />
         </main>

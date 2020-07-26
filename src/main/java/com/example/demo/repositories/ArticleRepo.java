@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ArticleRepo extends CrudRepository<Article, Integer> { // CrudRepository wants to know which entity belongs to this repo, and what type the Primary Key is.
-    //public List<Article> findAllByTitlesIgnoreCase(String title); // SELECT * FROM articles WHERE upper(titles) = upper(title)
+    // findAll() SELECT * FROM articles
+   //public Article findById(int id); // SELECT * FROM articles WHERE id = ?
 }

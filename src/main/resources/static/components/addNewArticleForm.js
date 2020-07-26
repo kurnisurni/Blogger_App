@@ -26,7 +26,7 @@ export default {
             let article = {
                 title: this.articleTitle,
                 content: this.articleContent,
-                published: this.articlePublished
+                published: Date.now(),
             }
             let result = await fetch('/rest/articles', {
                 method: 'POST',
@@ -42,6 +42,10 @@ export default {
 
             this.articleTitle = ''
             this.articleContent = ''
+            Date.now() = ''
+
+
+            this.$router.push('/')
 
     }
     }
